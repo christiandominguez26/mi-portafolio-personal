@@ -1,0 +1,87 @@
+.home-container {
+    height: 100vh; /* Ocupa la pantalla completa */
+    background-color: var(--color-base); /* Café oscuro */
+    color: var(--color-light); /* Blanco hueso */
+}
+
+.home-image {
+  display: inline-block;
+  filter: drop-shadow(15px 5px 25px #D6BDA3);  /*Sombreado en la imagen*/
+}
+
+.home-image img {
+    width: 50%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);  /*Desvanecido*/
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.home-image img:hover {
+  transform: scale(1.15);
+}
+
+.home-container .greeting-text {
+    font-family: 'Lobster', cursive;
+    font-size: 5rem;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.home-container .name-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    line-height: 1.1;
+}
+
+/************* MUSIC PLAYER AND VINYL DISC *************/
+.music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music-player .vinyl-img {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 1rem;
+}
+
+.music-player .spin {
+  animation: spin 4s linear infinite;
+}
+
+/* Botón de reproducción */
+.music-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+}
+
+/* Efecto al hacer clic */
+.btn-clicked {
+  transform: scale(1.3);
+  opacity: 0.7;
+}
+/************* MUSIC PLAYER AND VINYL DISC *************/
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
